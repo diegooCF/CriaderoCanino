@@ -1,10 +1,20 @@
-﻿namespace Logic
+﻿using System;
+
+namespace Logic
 {
     public class Specie
     {
         public void insert(Entity.Specie pSpecie)
         {
-            Data.Specie.insert(pSpecie);
+            try
+            {
+                Data.Specie.insert(pSpecie);
+            }
+            catch(Exception e)
+            {
+                //We catch the exception provided by Data.Specie class and throw it again
+                throw e;
+            }
         }
     }
 }

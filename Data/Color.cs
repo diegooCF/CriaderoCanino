@@ -10,7 +10,7 @@ namespace Data
         public static void insert(Entity.Color pColor)
         {
             //Query
-            string mySqlQuery = "INSERT INTO Color(description) VALUES (@description)";
+            string mySqlQuery = "INSERT INTO Colors VALUES (null, @description)";
             try
             {
                 mySqlConnection = new MySqlConnection(strConnection);

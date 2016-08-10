@@ -10,8 +10,7 @@ namespace Data
         public static void insert(Entity.Dog pDog)
         {
             //Query
-            string mySqlQuery = @"INSERT INTO Dog(nameReal, nameFormal, birthDate, Specie_idSpecie, Color_idColor, Gender_idGender)
-                                VALUES (@nameReal, @nameFormal, @birthDate, @Specie_idSpecie, @Color_idColor, @Gender_idGender)";
+            string mySqlQuery = @"INSERT INTO Dogs VALUES (null, @nameReal, @nameFormal, @birthDate, @Specie_idSpecie, @Color_idColor, @Gender_idGender)";
             try
             {
                 mySqlConnection = new MySqlConnection(strConnection);

@@ -1,5 +1,6 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace Data
 {
@@ -14,9 +15,9 @@ namespace Data
             MySqlConnection mySqlConnection = new MySqlConnection(strConnection);
 
             //Insert statement
-            string strQuery = "INSERT INTO Species(description) VALUES (@description)";
+            string strQuery = "INSERT INTO Species VALUES (null, @description)";
 
-            MySqlCommand mySqlCommand = new MySqlCommand(strQuery);
+            MySqlCommand mySqlCommand = new MySqlCommand(strQuery, mySqlConnection);
 
             //Parameters
             mySqlCommand.Parameters.AddWithValue("@description", pSpecie.description);
@@ -28,9 +29,9 @@ namespace Data
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new Exception("No se pudo acceder a la base de datos");
+                throw e;
             }
         }
 

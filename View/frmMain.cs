@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public partial class frmMain : Form
+    public partial class FrmMain : Form
     {
         private int childFormNumber = 0;
 
-        public frmMain()
+        public FrmMain()
         {
             InitializeComponent();
         }
@@ -49,58 +49,20 @@ namespace View
             }
         }
 
-        private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
+        private void especieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
+            //Create an entity and a logic objects to use his methods
+            Entity.Specie entitySpecie = new Entity.Specie("Caniche");
+            Logic.Specie logicSpecie = new Logic.Specie();
 
-        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
-        }
-
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
-        }
-
-        private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.Cascade);
-        }
-
-        private void TileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.TileVertical);
-        }
-
-        private void TileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.TileHorizontal);
-        }
-
-        private void ArrangeIconsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.ArrangeIcons);
-        }
-
-        private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (Form childForm in MdiChildren)
+            try
             {
-                childForm.Close();
+                logicSpecie.insert(entitySpecie);
+                MessageBox.Show(this, "Especie " + entitySpecie.description +" agregada correctamente", "Registro agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Se ha producido un error en el acceso a datos. Detalles: " + ex.Message, "Registro fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
