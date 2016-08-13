@@ -21,5 +21,9 @@ namespace Logic
         {
             return Data.Specie.getSpecies();
         }
+        public int getSpecieID(string pDescription)
+        {
+            return Data.Specie.getSpecieID(pDescription);
+        }
     }
 }

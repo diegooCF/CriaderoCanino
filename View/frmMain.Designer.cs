@@ -72,32 +72,33 @@
             this.perroToolStripMenuItem,
             this.colorToolStripMenuItem});
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             // 
             // especieToolStripMenuItem
             // 
             this.especieToolStripMenuItem.Name = "especieToolStripMenuItem";
-            this.especieToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.especieToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.especieToolStripMenuItem.Text = "Especie";
             this.especieToolStripMenuItem.Click += new System.EventHandler(this.especieToolStripMenuItem_Click);
             // 
             // perroToolStripMenuItem
             // 
             this.perroToolStripMenuItem.Name = "perroToolStripMenuItem";
-            this.perroToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.perroToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.perroToolStripMenuItem.Text = "Perro";
+            this.perroToolStripMenuItem.Click += new System.EventHandler(this.perroToolStripMenuItem_Click);
             // 
             // colorToolStripMenuItem
             // 
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.colorToolStripMenuItem.Text = "Color";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // consultaToolStripMenuItem

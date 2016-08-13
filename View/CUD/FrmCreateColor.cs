@@ -46,12 +46,12 @@ namespace View.CUD
             try
             {
                 //Insert new Color to DB
-                Logic.Color logicSpecie = new Logic.Color();
-                Entity.Color entitySpecie = new Entity.Color(txtDescription.Text);
-                logicSpecie.insert(entitySpecie);
+                Logic.Color logicColor = new Logic.Color();
+                Entity.Color entityColor = new Entity.Color(txtDescription.Text);
+                logicColor.insert(entityColor);
 
                 //Message and reload listView
-                MessageBox.Show("Especie agregada correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Color agregado correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lvColors.Items.Clear();
                 txtDescription.Clear();
                 txtDescription.Focus();
@@ -62,6 +62,11 @@ namespace View.CUD
                 MessageBox.Show(ex.Message, "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtDescription.Focus();
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

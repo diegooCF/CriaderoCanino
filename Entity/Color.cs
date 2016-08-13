@@ -15,14 +15,14 @@
                 if (value != "")
                     description = value;
                 else
-                    throw new System.Exception("El campo Descripcion no puede estar vacio");
+                    throw new System.Exception("El campo Nombre no puede estar vacio");
             }
         }
 
         public Color() { }
         public Color(string description)
         {
-            this.description = description;
+            Description = description;
         }
     }
 }

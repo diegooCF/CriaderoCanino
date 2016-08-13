@@ -80,5 +80,13 @@ namespace View
             form.StartPosition = FormStartPosition.CenterParent;
             form.Show();
         }
+
+        private void perroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CUD.FrmCreateDog form = new CUD.FrmCreateDog();
+            form.MdiParent = this;
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.Show();
+        }
     }
 }

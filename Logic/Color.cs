@@ -17,7 +17,7 @@ namespace Logic
             }
             catch (Exception e)
             {
-                //We catch the exception provided by Data.Specie class and throw it again
+                //We catch the exception provided by Data.Color class and throw it again
                 throw e;
             }
         }

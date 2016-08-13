@@ -10,7 +10,7 @@ namespace Data
         public static void insert(Entity.Dog pDog)
         {
             //Query
-            string mySqlQuery = @"INSERT INTO Dogs VALUES (null, @nameReal, @nameFormal, @birthDate, @Specie_idSpecie, @Color_idColor, @Gender_idGender)";
+            string mySqlQuery = @"INSERT INTO Dogs VALUES (null, @nameReal, @nameFormal, @birthDate, @gender, @Specie_idSpecie, @Color_idColor)";
             try
             {
                 mySqlConnection = new MySqlConnection(strConnection);
@@ -24,10 +24,10 @@ namespace Data
             mySqlCommand.Parameters.AddWithValue("nameReal", pDog.nameReal);
             mySqlCommand.Parameters.AddWithValue("nameFormal", pDog.nameFormal);
             mySqlCommand.Parameters.AddWithValue("birthDate", pDog.birthDate);
+            mySqlCommand.Parameters.AddWithValue("gender", pDog.gender);
             mySqlCommand.Parameters.AddWithValue("Specie_idSpecie", pDog.Specie_idSpecie);
             mySqlCommand.Parameters.AddWithValue("Color_idColor", pDog.Color_idColor);
-            mySqlCommand.Parameters.AddWithValue("Gender_idGender", pDog.Gender_idGender);
-       
+ 
             try
             {
                 mySqlConnection.Open();
