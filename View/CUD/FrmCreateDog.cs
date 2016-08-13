@@ -40,21 +40,6 @@ namespace View.CUD
                 cboColor.Items.Add(row["description"].ToString());
             }
         }
-
-        private void FrmCreateDog_Load(object sender, EventArgs e)
-        {
-            //Load setup
-            MaximizeBox = false;
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            //We bind both Combos
-            BindSpecies();
-            BindColors();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
         private int getId(DataTable dataTable, ComboBox cbo)
         {
             foreach (DataRow row in dataTable.Rows)
@@ -71,16 +56,37 @@ namespace View.CUD
             txtRealName.Clear();
             txtFormalName.Clear();
             cboSpecie.SelectedIndex = 0;
-            cboColor.SelectedIndex= 0;
+            cboColor.SelectedIndex = 0;
             cboGender.SelectedIndex = 0;
+            txtRealName.Focus();
         }
 
+        private void FrmCreateDog_Load(object sender, EventArgs e)
+        {
+            //Load setup
+            MaximizeBox = false;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            //We bind both Combos
+            BindSpecies();
+            BindColors();
+            //Selected start item
+            cboSpecie.SelectedIndex = 0;
+            cboColor.SelectedIndex = 0;
+            cboGender.SelectedIndex = 0;
+            txtRealName.Focus();
+
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
         private void btnAdd_Click(object sender, EventArgs e)
-        {           
+        {
             string realName = txtRealName.Text;
             string formalName = txtFormalName.Text;
             DateTime birthDate = Convert.ToDateTime(dtpBirthDate.Text);
             string gender = cboGender.SelectedItem.ToString();
+
             //Required fields for foreigns keys
             Logic.Specie logicSpecie = new Logic.Specie();
             Logic.Color logicColor = new Logic.Color();
@@ -98,17 +104,55 @@ namespace View.CUD
             try
             {
                 //Insert Dog
-                Entity.Dog entityDog = new Entity.Dog(realName, formalName, birthDate, gender, Species_idSpecie, Colors_idColor);
-                Logic.Dog logicDog = new Logic.Dog();
-                logicDog.insert(entityDog);
+                Entity.Dog entityDog = new Entity.Dog();
+                try
+                {
+                   entityDog = new Entity.Dog(realName, formalName, birthDate, gender, Species_idSpecie, Colors_idColor);
+                   Logic.Dog logicDog = new Logic.Dog();
+                   //Check if Date should be null
+                   if (chkBirthDate.Checked)
+                        logicDog.insert(entityDog);
+                   else
+                        logicDog.InsertNoDate(entityDog);
 
-                MessageBox.Show("Canino agregado correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clearFields();
+                    MessageBox.Show("Canino agregado correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clearFields();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }               
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtRealName.Focus();
+            }
+        }
+        private void chkBirthDate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkBirthDate.Checked)
+                dtpBirthDate.Enabled = true;
+            else
+                dtpBirthDate.Enabled = false;
+        }
+        private void cboSpecie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cboSpecie.SelectedItem.ToString() == "Maltes")
+            {
+                cboColor.Enabled = false;
+                foreach(var item in cboColor.Items)
+                {
+                    if (item.ToString() == "Blanco")
+                    {
+                        cboColor.SelectedItem = item;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                cboColor.Enabled = true;
             }
         }
     }

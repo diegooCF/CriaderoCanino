@@ -44,6 +44,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.chkBirthDate = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +70,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 68);
+            this.label3.Location = new System.Drawing.Point(3, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 13);
             this.label3.TabIndex = 2;
@@ -119,8 +120,9 @@
             // 
             // dtpBirthDate
             // 
+            this.dtpBirthDate.Enabled = false;
             this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBirthDate.Location = new System.Drawing.Point(120, 62);
+            this.dtpBirthDate.Location = new System.Drawing.Point(120, 94);
             this.dtpBirthDate.Name = "dtpBirthDate";
             this.dtpBirthDate.Size = new System.Drawing.Size(116, 20);
             this.dtpBirthDate.TabIndex = 2;
@@ -133,6 +135,7 @@
             this.cboSpecie.Name = "cboSpecie";
             this.cboSpecie.Size = new System.Drawing.Size(147, 21);
             this.cboSpecie.TabIndex = 0;
+            this.cboSpecie.SelectedIndexChanged += new System.EventHandler(this.cboSpecie_SelectedIndexChanged);
             // 
             // cboColor
             // 
@@ -163,7 +166,7 @@
             this.groupBox1.Controls.Add(this.cboColor);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cboSpecie);
-            this.groupBox1.Location = new System.Drawing.Point(15, 115);
+            this.groupBox1.Location = new System.Drawing.Point(15, 161);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(249, 124);
             this.groupBox1.TabIndex = 9;
@@ -172,6 +175,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.chkBirthDate);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dtpBirthDate);
@@ -180,12 +184,12 @@
             this.panel1.Controls.Add(this.txtRealName);
             this.panel1.Location = new System.Drawing.Point(15, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(249, 97);
+            this.panel1.Size = new System.Drawing.Size(249, 143);
             this.panel1.TabIndex = 10;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(189, 245);
+            this.btnAdd.Location = new System.Drawing.Point(189, 291);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 0;
@@ -195,7 +199,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(108, 245);
+            this.btnCancel.Location = new System.Drawing.Point(108, 291);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 1;
@@ -203,11 +207,22 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // chkBirthDate
+            // 
+            this.chkBirthDate.AutoSize = true;
+            this.chkBirthDate.Location = new System.Drawing.Point(6, 71);
+            this.chkBirthDate.Name = "chkBirthDate";
+            this.chkBirthDate.Size = new System.Drawing.Size(162, 17);
+            this.chkBirthDate.TabIndex = 3;
+            this.chkBirthDate.Text = "Agregar fecha de nacimiento";
+            this.chkBirthDate.UseVisualStyleBackColor = true;
+            this.chkBirthDate.CheckedChanged += new System.EventHandler(this.chkBirthDate_CheckedChanged);
+            // 
             // FrmCreateDog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(281, 278);
+            this.ClientSize = new System.Drawing.Size(370, 327);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.panel1);
@@ -242,5 +257,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.CheckBox chkBirthDate;
     }
 }

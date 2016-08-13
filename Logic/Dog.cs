@@ -16,7 +16,19 @@ namespace Logic
             }
             catch (Exception e)
             {
-                //We catch the exception provided by Data.Specie class and throw it again
+                //We catch the exception provided by Data.Dog class and throw it again
+                throw e;
+            }
+        }
+        public void InsertNoDate(Entity.Dog pDog)
+        {
+            try
+            {
+                Data.Dog.InsertNoDate(pDog);
+            }
+            catch (Exception e)
+            {
+                //We catch the exception provided by Data.Dog class and throw it again
                 throw e;
             }
         }
