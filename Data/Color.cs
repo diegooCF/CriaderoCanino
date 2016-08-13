@@ -1,11 +1,13 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 
 namespace Data
 {
     public static class Color
     {
         private static string strConnection = @"Server=localhost;Database=Criadero;Uid=admin;Pwd=msfsxs";
+
         private static MySqlConnection mySqlConnection;
         public static void insert(Entity.Color pColor)
         {
@@ -21,7 +23,7 @@ namespace Data
             }
 
             MySqlCommand mySqlCommand = new MySqlCommand(mySqlQuery, mySqlConnection);
-            mySqlCommand.Parameters.AddWithValue("description", pColor.description);
+            mySqlCommand.Parameters.AddWithValue("description", pColor.Description);
 
             try
             {
@@ -33,6 +35,14 @@ namespace Data
             {
                 throw new Exception("No se pudo acceder a la base de datos");
             }
+        }
+        public static DataTable getColors()
+        {
+            DataTable dataTable = new DataTable();
+            string query = "SELECT * FROM Colors";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, strConnection);
+            adapter.Fill(dataTable);
+            return dataTable;
         }
     }
 }

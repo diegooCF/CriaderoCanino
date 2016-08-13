@@ -2,7 +2,22 @@
 {
     public class Color
     {
-        public string description { get; set; }
+        private string description;
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+
+            set
+            {
+                if (value != "")
+                    description = value;
+                else
+                    throw new System.Exception("El campo Descripcion no puede estar vacio");
+            }
+        }
 
         public Color() { }
         public Color(string description)

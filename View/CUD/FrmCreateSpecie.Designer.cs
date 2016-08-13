@@ -138,6 +138,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FrmCreateSpecie";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar nueva especie";
             this.Load += new System.EventHandler(this.FrmCreateSpecie_Load);
             this.panel1.ResumeLayout(false);

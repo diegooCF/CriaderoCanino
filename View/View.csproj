@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CUD\FrmCreateColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CUD\FrmCreateColor.Designer.cs">
+      <DependentUpon>FrmCreateColor.cs</DependentUpon>
+    </Compile>
     <Compile Include="CUD\FrmCreateSpecie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CUD\FrmCreateColor.resx">
+      <DependentUpon>FrmCreateColor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CUD\FrmCreateSpecie.resx">
       <DependentUpon>FrmCreateSpecie.cs</DependentUpon>
     </EmbeddedResource>

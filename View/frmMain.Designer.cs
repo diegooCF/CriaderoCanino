@@ -39,6 +39,7 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.especiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.coloresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,38 +72,39 @@
             this.perroToolStripMenuItem,
             this.colorToolStripMenuItem});
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             // 
             // especieToolStripMenuItem
             // 
             this.especieToolStripMenuItem.Name = "especieToolStripMenuItem";
-            this.especieToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.especieToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.especieToolStripMenuItem.Text = "Especie";
             this.especieToolStripMenuItem.Click += new System.EventHandler(this.especieToolStripMenuItem_Click);
             // 
             // perroToolStripMenuItem
             // 
             this.perroToolStripMenuItem.Name = "perroToolStripMenuItem";
-            this.perroToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.perroToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.perroToolStripMenuItem.Text = "Perro";
             // 
             // colorToolStripMenuItem
             // 
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.colorToolStripMenuItem.Text = "Color";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.especiesToolStripMenuItem});
+            this.especiesToolStripMenuItem,
+            this.coloresToolStripMenuItem});
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.consultaToolStripMenuItem.Text = "Consulta";
@@ -110,9 +112,16 @@
             // especiesToolStripMenuItem
             // 
             this.especiesToolStripMenuItem.Name = "especiesToolStripMenuItem";
-            this.especiesToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.especiesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.especiesToolStripMenuItem.Text = "Especies";
             this.especiesToolStripMenuItem.Click += new System.EventHandler(this.especiesToolStripMenuItem_Click);
+            // 
+            // coloresToolStripMenuItem
+            // 
+            this.coloresToolStripMenuItem.Name = "coloresToolStripMenuItem";
+            this.coloresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.coloresToolStripMenuItem.Text = "Colores";
+            this.coloresToolStripMenuItem.Click += new System.EventHandler(this.coloresToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -142,6 +151,7 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem especiesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem coloresToolStripMenuItem;
     }
 }
 

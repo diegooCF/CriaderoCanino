@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.Contracts;
-
-namespace Entity
+﻿namespace Entity
 {
     public class Specie
     {
@@ -26,6 +24,5 @@ namespace Entity
         {
             this.Description = description;
         }
-
     }
 }

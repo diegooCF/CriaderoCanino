@@ -72,5 +72,13 @@ namespace View
             form.StartPosition = FormStartPosition.CenterParent;
             form.Show();
         }
+
+        private void coloresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CUD.FrmCreateColor form = new CUD.FrmCreateColor();
+            form.MdiParent = this;
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.Show();
+        }
     }
 }

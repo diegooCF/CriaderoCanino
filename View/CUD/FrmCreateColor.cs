@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace View.CUD
 {
-    public partial class FrmCreateSpecie : Form
+    public partial class FrmCreateColor : Form
     {
-        public FrmCreateSpecie()
+        public FrmCreateColor()
         {
             InitializeComponent();
         }
 
-        private void getSpecies()
+        private void getColors()
         {
-            Logic.Specie objSpecie = new Logic.Specie();
-            DataTable dataTable = objSpecie.getSpecies();
+            Logic.Color objColor = new Logic.Color();
+            DataTable dataTable = objColor.getColors();
             foreach (DataRow row in dataTable.Rows)
             {
                 ListViewItem item = new ListViewItem(row[0].ToString());
@@ -28,45 +28,40 @@ namespace View.CUD
                 {
                     item.SubItems.Add(row[i].ToString());
                 }
-                lvSpecies.Items.Add(item);
+                lvColors.Items.Add(item);
             }
         }
-        private void FrmCreateSpecie_Load(object sender, EventArgs e)
+        private void FrmCreateColor_Load(object sender, EventArgs e)
         {
             //Load setup
             MaximizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             txtDescription.Focus();
             //Bind the listview at start
-            getSpecies();
+            getColors();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                //Insert new Specie to DB
-                Logic.Specie logicSpecie = new Logic.Specie();
-                Entity.Specie entitySpecie = new Entity.Specie(txtDescription.Text);
+                //Insert new Color to DB
+                Logic.Color logicSpecie = new Logic.Color();
+                Entity.Color entitySpecie = new Entity.Color(txtDescription.Text);
                 logicSpecie.insert(entitySpecie);
 
                 //Message and reload listView
                 MessageBox.Show("Especie agregada correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                lvSpecies.Items.Clear();
+                lvColors.Items.Clear();
                 txtDescription.Clear();
                 txtDescription.Focus();
-                getSpecies();
+                getColors();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtDescription.Focus();
             }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }
