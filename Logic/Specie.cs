@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 
 namespace Logic
 {
@@ -15,6 +16,10 @@ namespace Logic
                 //We catch the exception provided by Data.Specie class and throw it again
                 throw e;
             }
+        }
+        public DataTable getSpecies()
+        {
+            return Data.Specie.getSpecies();
         }
     }
 }

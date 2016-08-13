@@ -54,16 +54,23 @@ namespace View
             //Create an entity and a logic objects to use his methods
             Entity.Specie entitySpecie = new Entity.Specie("Caniche");
             Logic.Specie logicSpecie = new Logic.Specie();
-
             try
             {
                 logicSpecie.insert(entitySpecie);
-                MessageBox.Show(this, "Especie " + entitySpecie.description +" agregada correctamente", "Registro agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Especie " + entitySpecie.Description +" agregada correctamente", "Registro agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(this, "Se ha producido un error en el acceso a datos. Detalles: " + ex.Message, "Registro fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void especiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CUD.FrmCreateSpecie form = new CUD.FrmCreateSpecie();
+            form.MdiParent = this;
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.Show();
         }
     }
 }

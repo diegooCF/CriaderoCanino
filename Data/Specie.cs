@@ -1,6 +1,9 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
+using MySql.Data;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Data;
 
 namespace Data
 {
@@ -20,7 +23,7 @@ namespace Data
             MySqlCommand mySqlCommand = new MySqlCommand(strQuery, mySqlConnection);
 
             //Parameters
-            mySqlCommand.Parameters.AddWithValue("@description", pSpecie.description);
+            mySqlCommand.Parameters.AddWithValue("@description", pSpecie.Description);
 
             //Let's try to open connection
             try
@@ -29,11 +32,18 @@ namespace Data
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw e;
+                throw ex;
             }
         }
-
+        public static DataTable getSpecies()
+        {
+            DataTable dataTable = new DataTable();
+            string query = "SELECT * FROM Species";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, strConnection);
+            adapter.Fill(dataTable);
+            return dataTable;
+        }
     }
 }

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CUD\FrmCreateSpecie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CUD\FrmCreateSpecie.Designer.cs">
+      <DependentUpon>FrmCreateSpecie.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CUD\FrmCreateSpecie.resx">
+      <DependentUpon>FrmCreateSpecie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
