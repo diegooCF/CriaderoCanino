@@ -29,7 +29,9 @@ namespace View.Config
             if (chkGuest.Checked)
             {
                 txtUser.Enabled = false;
-                txtPassword.Enabled = false;              
+                txtPassword.Enabled = false;
+                chkGuest.Location = new Point(56, 67);
+                lblAdvice.Visible = true;
             }
             else
             {
@@ -37,6 +39,8 @@ namespace View.Config
                 txtPassword.Enabled = true;
                 DataBaseConnection.StrConnection.UserID = null;
                 DataBaseConnection.StrConnection.Password = null;
+                lblAdvice.Visible = false;
+                chkGuest.Location = new Point(56, 86);
             }
         }
 

@@ -9,6 +9,7 @@ namespace DataBaseConnection
 
         private static void UpdateConnection()
         {
+            CloseConnection();
             mySqlConnection = new MySqlConnection(StrConnection.GetStringConnection());
         }
         public static MySqlConnection GetConnection()
@@ -41,7 +42,8 @@ namespace DataBaseConnection
         {
             try
             {
-                mySqlConnection.Close();
+                if(mySqlConnection.State != System.Data.ConnectionState.Closed)
+                    mySqlConnection.Close();
             }
             catch (Exception ex)
             {

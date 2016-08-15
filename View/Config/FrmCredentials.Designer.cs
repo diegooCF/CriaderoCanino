@@ -37,6 +37,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.chkGuest = new System.Windows.Forms.CheckBox();
             this.chkGuestHelp = new System.Windows.Forms.ToolTip(this.components);
+            this.lblAdvice = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -74,7 +75,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(140, 119);
+            this.btnLogin.Location = new System.Drawing.Point(137, 130);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 2;
@@ -84,7 +85,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(59, 119);
+            this.btnCancel.Location = new System.Drawing.Point(56, 130);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 4;
@@ -95,7 +96,7 @@
             // chkGuest
             // 
             this.chkGuest.AutoSize = true;
-            this.chkGuest.Location = new System.Drawing.Point(56, 79);
+            this.chkGuest.Location = new System.Drawing.Point(56, 86);
             this.chkGuest.Name = "chkGuest";
             this.chkGuest.Size = new System.Drawing.Size(124, 17);
             this.chkGuest.TabIndex = 3;
@@ -103,11 +104,22 @@
             this.chkGuest.UseVisualStyleBackColor = true;
             this.chkGuest.CheckedChanged += new System.EventHandler(this.chkGuest_CheckedChanged);
             // 
+            // lblAdvice
+            // 
+            this.lblAdvice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdvice.Location = new System.Drawing.Point(25, 87);
+            this.lblAdvice.Name = "lblAdvice";
+            this.lblAdvice.Size = new System.Drawing.Size(187, 28);
+            this.lblAdvice.TabIndex = 5;
+            this.lblAdvice.Text = "Aviso: Acceder como invitado solo proporcionará permisos de consulta";
+            this.lblAdvice.Visible = false;
+            // 
             // FrmCredentials
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(227, 154);
+            this.ClientSize = new System.Drawing.Size(224, 165);
+            this.Controls.Add(this.lblAdvice);
             this.Controls.Add(this.chkGuest);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);
@@ -134,5 +146,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.CheckBox chkGuest;
         private System.Windows.Forms.ToolTip chkGuestHelp;
+        private System.Windows.Forms.Label lblAdvice;
     }
 }
