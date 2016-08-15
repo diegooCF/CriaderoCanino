@@ -88,5 +88,13 @@ namespace View
             form.StartPosition = FormStartPosition.CenterParent;
             form.Show();
         }
+
+        private void credencialesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Config.FrmCredentials form = new Config.FrmCredentials();
+            form.MdiParent = this;
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.Show();
+        }
     }
 }

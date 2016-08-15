@@ -17,25 +17,36 @@ namespace View.CUD
             InitializeComponent();
         }
 
+        private void tryConnectionToDB()
+        {
+            
+        }
         private void getSpecies()
         {
-            Logic.Specie objSpecie = new Logic.Specie();
-            DataTable dataTable = objSpecie.getSpecies();
-            foreach (DataRow row in dataTable.Rows)
+            try
             {
-                ListViewItem item = new ListViewItem(row[0].ToString());
-                for (int i = 1; i < dataTable.Columns.Count; i++)
+                Logic.Specie objSpecie = new Logic.Specie();
+                DataTable dataTable = objSpecie.getSpecies();
+                foreach (DataRow row in dataTable.Rows)
                 {
-                    item.SubItems.Add(row[i].ToString());
+                    ListViewItem item = new ListViewItem(row[0].ToString());
+                    for (int i = 1; i < dataTable.Columns.Count; i++)
+                    {
+                        item.SubItems.Add(row[i].ToString());
+                    }
+                    lvSpecies.Items.Add(item);
                 }
-                lvSpecies.Items.Add(item);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void FrmCreateSpecie_Load(object sender, EventArgs e)
         {
             //Load setup
             MaximizeBox = false;
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             txtDescription.Focus();
             //Bind the listview at start
             getSpecies();
@@ -63,7 +74,6 @@ namespace View.CUD
                 txtDescription.Focus();
             }
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();

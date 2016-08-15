@@ -19,11 +19,14 @@ namespace Logic
         }
         public DataTable getSpecies()
         {
-            return Data.Specie.getSpecies();
-        }
-        public int getSpecieID(string pDescription)
-        {
-            return Data.Specie.getSpecieID(pDescription);
+            try
+            {
+                return Data.Specie.getSpecies();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

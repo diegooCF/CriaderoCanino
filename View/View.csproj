@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\FrmCredentials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\FrmCredentials.Designer.cs">
+      <DependentUpon>FrmCredentials.cs</DependentUpon>
+    </Compile>
     <Compile Include="CUD\FrmCreateColor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Config\FrmCredentials.resx">
+      <DependentUpon>FrmCredentials.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CUD\FrmCreateColor.resx">
       <DependentUpon>FrmCreateColor.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +116,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataBaseConnection\DataBaseConnection.csproj">
+      <Project>{cd54a374-4a63-44b9-8759-1dfcaef52d09}</Project>
+      <Name>DataBaseConnection</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{5b2a7f71-609c-44c3-9182-69ad3fa3c2b5}</Project>
       <Name>Entity</Name>
