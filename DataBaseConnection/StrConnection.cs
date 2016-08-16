@@ -8,8 +8,9 @@ namespace DataBaseConnection
 {
     public static class StrConnection
     {
-        private static string userID;
-        private static string password;
+        //TODO Dejar esto como estaba
+        private static string userID = "root";
+        private static string password = "Sur.5947/*-";
         private static string host = "localhost";
 
         public static string UserID

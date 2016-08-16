@@ -16,7 +16,8 @@ namespace View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Config.FrmCredentials());
+            //TODO Dejar esto como estaba
+            Application.Run(new Management.FrmServices());
         }
     }
 }
