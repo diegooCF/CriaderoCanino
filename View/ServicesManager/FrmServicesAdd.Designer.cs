@@ -1,0 +1,204 @@
+﻿namespace View.ServicesManager
+{
+    partial class FrmServicesAdd
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cboFemale = new System.Windows.Forms.ComboBox();
+            this.cboMale = new System.Windows.Forms.ComboBox();
+            this.cboZeal = new System.Windows.Forms.ComboBox();
+            this.dtpMinBirth = new System.Windows.Forms.DateTimePicker();
+            this.dtpMaxBirth = new System.Windows.Forms.DateTimePicker();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Añadir un nuevo servicio:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 148);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Macho:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Hembra:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 204);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(162, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Min. Fecha de parto aproximado:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 257);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(165, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Max. Fecha de parto aproximado:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 97);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Seleccione celo:";
+            // 
+            // cboFemale
+            // 
+            this.cboFemale.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFemale.FormattingEnabled = true;
+            this.cboFemale.Location = new System.Drawing.Point(15, 64);
+            this.cboFemale.Name = "cboFemale";
+            this.cboFemale.Size = new System.Drawing.Size(194, 21);
+            this.cboFemale.TabIndex = 0;
+            // 
+            // cboMale
+            // 
+            this.cboMale.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMale.FormattingEnabled = true;
+            this.cboMale.Location = new System.Drawing.Point(15, 164);
+            this.cboMale.Name = "cboMale";
+            this.cboMale.Size = new System.Drawing.Size(194, 21);
+            this.cboMale.TabIndex = 2;
+            // 
+            // cboZeal
+            // 
+            this.cboZeal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboZeal.FormattingEnabled = true;
+            this.cboZeal.Location = new System.Drawing.Point(15, 116);
+            this.cboZeal.Name = "cboZeal";
+            this.cboZeal.Size = new System.Drawing.Size(194, 21);
+            this.cboZeal.TabIndex = 1;
+            // 
+            // dtpMinBirth
+            // 
+            this.dtpMinBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpMinBirth.Location = new System.Drawing.Point(18, 220);
+            this.dtpMinBirth.Name = "dtpMinBirth";
+            this.dtpMinBirth.Size = new System.Drawing.Size(191, 20);
+            this.dtpMinBirth.TabIndex = 3;
+            // 
+            // dtpMaxBirth
+            // 
+            this.dtpMaxBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpMaxBirth.Location = new System.Drawing.Point(18, 273);
+            this.dtpMaxBirth.Name = "dtpMaxBirth";
+            this.dtpMaxBirth.Size = new System.Drawing.Size(191, 20);
+            this.dtpMaxBirth.TabIndex = 4;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(127, 316);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(80, 23);
+            this.btnAdd.TabIndex = 5;
+            this.btnAdd.Text = "Aceptar";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(15, 316);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(80, 23);
+            this.btnCancel.TabIndex = 6;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // FrmServicesAdd
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(221, 352);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.dtpMaxBirth);
+            this.Controls.Add(this.dtpMinBirth);
+            this.Controls.Add(this.cboMale);
+            this.Controls.Add(this.cboZeal);
+            this.Controls.Add(this.cboFemale);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Name = "FrmServicesAdd";
+            this.Text = "Añadir Servicio";
+            this.Load += new System.EventHandler(this.FrmServicesAdd_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cboFemale;
+        private System.Windows.Forms.ComboBox cboMale;
+        private System.Windows.Forms.ComboBox cboZeal;
+        private System.Windows.Forms.DateTimePicker dtpMinBirth;
+        private System.Windows.Forms.DateTimePicker dtpMaxBirth;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnCancel;
+    }
+}

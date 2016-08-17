@@ -27,5 +27,11 @@ namespace View.Management
         {
             bindServicesGrid();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ServicesManager.FrmServicesAdd form = new ServicesManager.FrmServicesAdd();
+            form.ShowDialog();
+        }
     }
 }
