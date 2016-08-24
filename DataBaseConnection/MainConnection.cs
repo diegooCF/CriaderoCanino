@@ -56,11 +56,14 @@ namespace DataBaseConnection
             {
                 GetConnection().Open();
                 mySqlCommand.ExecuteNonQuery();
-                GetConnection().Close();
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+            finally
+            {
+                GetConnection().Close();
             }
         }
     }

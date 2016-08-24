@@ -101,8 +101,8 @@ namespace View.CUD
             //Receipts the ID of Selected item in the Combobox (COLOR)
             dataTable = logicColor.getColors();
             Colors_idColor = getId(dataTable, cboColor);
-            try
-            {
+            /*try
+            {*/
                 //Insert Dog
                 Entity.Dog entityDog = new Entity.Dog();
                 try
@@ -113,19 +113,19 @@ namespace View.CUD
                    if (chkBirthDate.Checked)
                         logicDog.insert(entityDog);
                    else
-                        logicDog.InsertNoDate(entityDog);
+                        logicDog.insertNoDate(entityDog);
 
                     MessageBox.Show("Canino agregado correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clearFields();
-                }
+                /*}
                 catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }               
+                } */              
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtRealName.Focus();
             }
         }

@@ -93,9 +93,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(12, 97);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
+            this.label6.Size = new System.Drawing.Size(31, 13);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Seleccione celo:";
+            this.label6.Text = "Celo:";
             // 
             // cboFemale
             // 
@@ -105,6 +105,7 @@
             this.cboFemale.Name = "cboFemale";
             this.cboFemale.Size = new System.Drawing.Size(194, 21);
             this.cboFemale.TabIndex = 0;
+            this.cboFemale.SelectedIndexChanged += new System.EventHandler(this.cboFemale_SelectedIndexChanged);
             // 
             // cboMale
             // 
@@ -114,6 +115,7 @@
             this.cboMale.Name = "cboMale";
             this.cboMale.Size = new System.Drawing.Size(194, 21);
             this.cboMale.TabIndex = 2;
+            this.cboMale.SelectedIndexChanged += new System.EventHandler(this.cboMale_SelectedIndexChanged);
             // 
             // cboZeal
             // 
@@ -142,15 +144,18 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnAdd.Location = new System.Drawing.Point(127, 316);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(80, 23);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Aceptar";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(15, 316);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 23);
@@ -193,11 +198,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cboFemale;
-        private System.Windows.Forms.ComboBox cboMale;
-        private System.Windows.Forms.ComboBox cboZeal;
-        private System.Windows.Forms.DateTimePicker dtpMinBirth;
-        private System.Windows.Forms.DateTimePicker dtpMaxBirth;
+        protected System.Windows.Forms.ComboBox cboFemale;
+        protected System.Windows.Forms.ComboBox cboMale;
+        protected System.Windows.Forms.ComboBox cboZeal;
+        protected System.Windows.Forms.DateTimePicker dtpMinBirth;
+        protected System.Windows.Forms.DateTimePicker dtpMaxBirth;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
     }

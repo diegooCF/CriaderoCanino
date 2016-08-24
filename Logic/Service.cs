@@ -9,13 +9,35 @@ namespace Logic
 {
     public class Service
     {
-        public DataTable GetAllServices()
+        public void insert(Entity.Service pService)
         {
             try
             {
-                return Data.Service.GetAllServices();
+                Data.Service.insert(pService);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable getAllServices()
+        {
+            try
+            {
+                return Data.Service.getAllServices();
             }
             catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public void update(Entity.Service pService)
+        {
+            try
+            {
+                Data.Service.update(pService);
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }

@@ -29,7 +29,7 @@ namespace Data
                 throw ex;
             }
         }
-        public static void InsertNoDate(Entity.Dog pDog)
+        public static void insertNoDate(Entity.Dog pDog)
         {
             //Query
             string mySqlQuery = @"INSERT INTO Dogs VALUES (null, @nameReal, @nameFormal, null, @gender, @Specie_idSpecie, @Color_idColor)";
@@ -53,7 +53,7 @@ namespace Data
 
         public static DataTable getFemales()
         {
-            string query = @"SELECT dogs.nameReal FROM dogs WHERE (gender = 'Hembra')";
+            string query = @"SELECT idDogs, dogs.nameReal FROM dogs WHERE (gender = 'Hembra')";
             DataTable dataTable = new DataTable();
             try
             {
@@ -69,13 +69,33 @@ namespace Data
         }
         public static DataTable getMales()
         {
-            string query = @"SELECT dogs.nameReal FROM dogs WHERE (gender = 'Macho')";
+            string query = @"SELECT idDogs, dogs.nameReal FROM dogs WHERE (gender = 'Macho')";
             DataTable dataTable = new DataTable();
             try
             {
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, StrConnection.GetStringConnection());
                 adapter.Fill(dataTable);
                 return dataTable;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static int getIdByRealName(string nameReal)
+        {
+            string query = @"SELECT dogs.idDogs FROM dogs WHERE (dogs.nameReal = ?nameReal)";
+            DataTable dataTable = new DataTable();           
+            try
+            {
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, StrConnection.GetStringConnection());
+                adapter.SelectCommand.Parameters.AddWithValue("?namereal", nameReal);
+                adapter.Fill(dataTable);
+                int id = Convert.ToInt32(dataTable.Rows[0]["idDogs"].ToString());
+                if (dataTable.Rows.Count > 0)
+                    return Convert.ToInt32(dataTable.Rows[0]["idDogs"].ToString());
+                else
+                    throw new Exception("No se encontró un ID para nombre especificado");
             }
             catch (Exception ex)
             {

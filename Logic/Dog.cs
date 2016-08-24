@@ -21,11 +21,11 @@ namespace Logic
                 throw e;
             }
         }
-        public void InsertNoDate(Entity.Dog pDog)
+        public void insertNoDate(Entity.Dog pDog)
         {
             try
             {
-                Data.Dog.InsertNoDate(pDog);
+                Data.Dog.insertNoDate(pDog);
             }
             catch (Exception e)
             {
@@ -50,6 +50,17 @@ namespace Logic
             try
             {
                 return Data.Dog.getMales();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public int getIdByRealName(string nameReal)
+        {
+            try
+            {
+                return Data.Dog.getIdByRealName(nameReal);
             }
             catch (Exception ex)
             {

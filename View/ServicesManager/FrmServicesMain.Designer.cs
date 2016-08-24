@@ -54,6 +54,7 @@
             this.btnModify.TabIndex = 0;
             this.btnModify.Text = "Modificar";
             this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // btnDelete
             // 
@@ -81,8 +82,10 @@
             this.dgvServices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvServices.Location = new System.Drawing.Point(12, 12);
+            this.dgvServices.MultiSelect = false;
             this.dgvServices.Name = "dgvServices";
             this.dgvServices.ReadOnly = true;
+            this.dgvServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvServices.Size = new System.Drawing.Size(579, 176);
             this.dgvServices.TabIndex = 0;
             // 

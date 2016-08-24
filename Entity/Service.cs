@@ -20,10 +20,10 @@ namespace Entity
         {
             this.idMale = idMale;
             this.idFemale = idFemale;
-            this.birthStart = birthStart;
-            this.birthEnd = birthEnd;
+            this.birthStart = birthStart.Date;
+            this.birthEnd = birthEnd.Date;
             this.idDogZeal = idDogZeal;
-            this.startDateZeal = startDateZeal;
+            this.startDateZeal = startDateZeal.Date;
         } 
     }
 }
