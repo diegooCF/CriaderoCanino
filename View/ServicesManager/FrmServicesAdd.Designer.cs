@@ -31,14 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cboFemale = new System.Windows.Forms.ComboBox();
             this.cboMale = new System.Windows.Forms.ComboBox();
             this.cboZeal = new System.Windows.Forms.ComboBox();
-            this.dtpMinBirth = new System.Windows.Forms.DateTimePicker();
-            this.dtpMaxBirth = new System.Windows.Forms.DateTimePicker();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -70,24 +66,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Hembra:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 204);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(162, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Min. Fecha de parto aproximado:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 257);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(165, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Max. Fecha de parto aproximado:";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -105,7 +83,6 @@
             this.cboFemale.Name = "cboFemale";
             this.cboFemale.Size = new System.Drawing.Size(194, 21);
             this.cboFemale.TabIndex = 0;
-            this.cboFemale.SelectedIndexChanged += new System.EventHandler(this.cboFemale_SelectedIndexChanged);
             // 
             // cboMale
             // 
@@ -115,7 +92,7 @@
             this.cboMale.Name = "cboMale";
             this.cboMale.Size = new System.Drawing.Size(194, 21);
             this.cboMale.TabIndex = 2;
-            this.cboMale.SelectedIndexChanged += new System.EventHandler(this.cboMale_SelectedIndexChanged);
+            this.cboMale.Items.Insert(0, "Seleccione macho");
             // 
             // cboZeal
             // 
@@ -126,26 +103,10 @@
             this.cboZeal.Size = new System.Drawing.Size(194, 21);
             this.cboZeal.TabIndex = 1;
             // 
-            // dtpMinBirth
-            // 
-            this.dtpMinBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpMinBirth.Location = new System.Drawing.Point(18, 220);
-            this.dtpMinBirth.Name = "dtpMinBirth";
-            this.dtpMinBirth.Size = new System.Drawing.Size(191, 20);
-            this.dtpMinBirth.TabIndex = 3;
-            // 
-            // dtpMaxBirth
-            // 
-            this.dtpMaxBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpMaxBirth.Location = new System.Drawing.Point(18, 273);
-            this.dtpMaxBirth.Name = "dtpMaxBirth";
-            this.dtpMaxBirth.Size = new System.Drawing.Size(191, 20);
-            this.dtpMaxBirth.TabIndex = 4;
-            // 
             // btnAdd
             // 
             this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAdd.Location = new System.Drawing.Point(127, 316);
+            this.btnAdd.Location = new System.Drawing.Point(129, 205);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(80, 23);
             this.btnAdd.TabIndex = 5;
@@ -156,7 +117,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(15, 316);
+            this.btnCancel.Location = new System.Drawing.Point(12, 205);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 23);
             this.btnCancel.TabIndex = 6;
@@ -168,17 +129,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(221, 352);
+            this.ClientSize = new System.Drawing.Size(221, 240);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dtpMaxBirth);
-            this.Controls.Add(this.dtpMinBirth);
             this.Controls.Add(this.cboMale);
             this.Controls.Add(this.cboZeal);
             this.Controls.Add(this.cboFemale);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -195,14 +152,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         protected System.Windows.Forms.ComboBox cboFemale;
         protected System.Windows.Forms.ComboBox cboMale;
         protected System.Windows.Forms.ComboBox cboZeal;
-        protected System.Windows.Forms.DateTimePicker dtpMinBirth;
-        protected System.Windows.Forms.DateTimePicker dtpMaxBirth;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
     }

@@ -63,7 +63,8 @@ namespace DataBaseConnection
             }
             finally
             {
-                GetConnection().Close();
+                if (GetConnection().State == System.Data.ConnectionState.Open)
+                    GetConnection().Close();
             }
         }
     }

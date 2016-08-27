@@ -69,7 +69,7 @@ namespace Data
         }
         public static DataTable getMales()
         {
-            string query = @"SELECT idDogs, dogs.nameReal FROM dogs WHERE (gender = 'Macho')";
+            string query = @"SELECT dogs.idDogs, dogs.nameReal FROM dogs WHERE (gender = 'Macho')";
             DataTable dataTable = new DataTable();
             try
             {

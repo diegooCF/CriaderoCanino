@@ -10,20 +10,16 @@ namespace Entity
     {
         public int idMale { get; set; }
         public int idFemale { get; set; }
-        public DateTime birthStart { get; set; }
-        public DateTime birthEnd { get; set; }
-        public int idDogZeal { get; set; }
-        public DateTime startDateZeal { get; set; }
+        public int Zeal_idDogs { get; set; }
+        public DateTime Zeal_startDate { get; set; }
 
         public Service() { }
-        public Service(int idMale, int idFemale, DateTime birthStart, DateTime birthEnd, int idDogZeal, DateTime startDateZeal)
+        public Service(int idMale, int idFemale, DateTime Zeal_startDate)
         {
             this.idMale = idMale;
             this.idFemale = idFemale;
-            this.birthStart = birthStart.Date;
-            this.birthEnd = birthEnd.Date;
-            this.idDogZeal = idDogZeal;
-            this.startDateZeal = startDateZeal.Date;
+            this.Zeal_idDogs = idFemale;
+            this.Zeal_startDate = Zeal_startDate;
         } 
     }
 }

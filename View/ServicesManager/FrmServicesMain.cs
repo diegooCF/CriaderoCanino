@@ -43,13 +43,18 @@ namespace View.Management
         {
             if (dgvServices.SelectedRows.Count > 0)
             {
-                ServicesManager.FrmServicesModify form = new ServicesManager.FrmServicesModify(dgvServices.SelectedRows);
-                form.ShowDialog();
+                //ServicesManager.FrmServicesModify form = new ServicesManager.FrmServicesModify(dgvServices.SelectedRows);
+               // form.ShowDialog();
             }
             else
             {
                 MessageBox.Show("No ha seleccionado ninguna celda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

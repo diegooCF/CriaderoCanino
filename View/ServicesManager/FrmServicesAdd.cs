@@ -12,52 +12,33 @@ namespace View.ServicesManager
 {
     public partial class FrmServicesAdd : Form
     {
-        //Required Tables
         Logic.Dog logicFemaleDog = new Logic.Dog();
-        DataTable dataFemaleTable = new DataTable();
-
         Logic.Dog logicMaleDog = new Logic.Dog();
-        DataTable dataMaleTable = new DataTable();
-
         Logic.Zeal logicZeal = new Logic.Zeal();
-        DataTable dataZealTable = new DataTable();
+
         //Entity fields
         protected int idMale = 0;
         protected int idFemale = 0;
-        DateTime birthStart;
-        DateTime birthEnd;
-        DateTime startDogZeal;
+        DateTime Zeal_startDate;
 
-        protected void bindFemaleCombo()
-        {
-            dataFemaleTable = logicFemaleDog.getFemales();
-            foreach (DataRow row in dataFemaleTable.Rows)
-            {
-                cboFemale.Items.Add(row["nameReal"].ToString());
-            }
-        }
         protected void bindZealCombo()
         {
-            cboZeal.Items.Clear();
-            string selectedFemale = cboFemale.SelectedItem.ToString();
-            dataZealTable = logicZeal.getZealFrom(logicFemaleDog.getIdByRealName(selectedFemale));
-            foreach (DataRow row in dataZealTable.Rows)
-            {
-                cboZeal.Items.Add(row["startDate"]);
-            }
-        }
-        protected void bindMaleCombo()
-        {
-            dataMaleTable = logicMaleDog.getMales();
-            foreach (DataRow row in dataMaleTable.Rows)
-            {
-                cboMale.Items.Add(row["nameReal"].ToString());
-            }
+            cboZeal.DataSource = logicZeal.getZealFrom(Convert.ToInt32(cboFemale.SelectedValue));
+            cboZeal.DisplayMember = "startDate";
         }
         protected void bindCombos()
         {
-            bindFemaleCombo();
-            bindMaleCombo();
+            //Bind female combo
+            cboFemale.DataSource = logicFemaleDog.getFemales();
+            cboFemale.DisplayMember = "nameReal";
+            cboFemale.ValueMember = "idDogs";
+            this.cboFemale.SelectedIndexChanged += new System.EventHandler(this.cboFemale_SelectedIndexChanged);
+            //Bind male combo
+            cboMale.DataSource = logicMaleDog.getMales();
+            cboMale.DisplayMember = "nameReal";
+            cboMale.ValueMember = "idDogs";
+            this.cboMale.SelectedIndexChanged += new System.EventHandler(this.cboMale_SelectedIndexChanged);
+
         }
         public FrmServicesAdd()
         {
@@ -72,15 +53,17 @@ namespace View.ServicesManager
             MaximizeBox = false;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             bindCombos();
+            cboMale.SelectedValue = 0;
+            cboFemale.SelectedValue = 0;
         }
         private void cboFemale_SelectedIndexChanged(object sender, EventArgs e)
         {
-            idFemale = Convert.ToInt32(dataFemaleTable.Rows[0]["idDogs"].ToString());
+            idFemale = Convert.ToInt32(cboFemale.SelectedValue);
             bindZealCombo();
         }
         private void cboMale_SelectedIndexChanged(object sender, EventArgs e)
         {
-            idMale = Convert.ToInt32(dataMaleTable.Rows[0]["idDogs"].ToString());
+            idMale = Convert.ToInt32(cboMale.SelectedValue);
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -91,10 +74,8 @@ namespace View.ServicesManager
             else
             {
                 //Asign selected Dates
-                birthStart = dtpMinBirth.Value;
-                birthEnd = dtpMaxBirth.Value;
-                startDogZeal = Convert.ToDateTime(cboZeal.Text);
-                Entity.Service entityService = new Entity.Service(idMale, idFemale, birthStart.Date, birthEnd.Date, idFemale, startDogZeal.Date);
+                Zeal_startDate = Convert.ToDateTime(cboZeal.Text);
+                Entity.Service entityService = new Entity.Service(idMale, idFemale, Zeal_startDate.Date);
                 try
                 {
                     Logic.Service logicService = new Logic.Service();
