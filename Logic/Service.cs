@@ -31,11 +31,44 @@ namespace Logic
                 throw ex;
             }
         }
+        public DataTable getAllServicesCompositeData()
+        {
+            try
+            {
+                return Data.Service.getAllServicesCompositeData();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public void update(Entity.Service pService)
         {
             try
             {
                 Data.Service.update(pService);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public Entity.Service getService(int pId)
+        {
+            try
+            {
+                return Data.Service.getService(pId);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public void delete(int pId)
+        {
+            try
+            {
+                Data.Service.delete(pId);
             }
             catch (Exception ex)
             {

@@ -61,5 +61,19 @@ namespace View.Management
         {
             Close();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvServices.SelectedRows.Count > 0)
+            {
+                ServicesManager.FrmServicesDelete form = new ServicesManager.FrmServicesDelete();
+                form.ShowDialog();
+                refreshDataGridView();
+            }
+            else
+            {
+                MessageBox.Show("No ha seleccionado ninguna celda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

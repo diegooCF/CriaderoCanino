@@ -69,7 +69,7 @@ namespace View.ServicesManager
         {
             idMale = Convert.ToInt32(cboMale.SelectedValue);
         }
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnModify_Click(object sender, EventArgs e)
         {
             if (cboMale.SelectedItem == null || cboFemale.SelectedItem == null || cboZeal.SelectedItem == null)
             {
@@ -82,10 +82,10 @@ namespace View.ServicesManager
                 try
                 {
                     Logic.Service logicService = new Logic.Service();
-                    if (MessageBox.Show("Desea aceptar los cambios?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Desea aceptar las modificaciones?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         logicService.update(entityService);
-                        MessageBox.Show("Servicio modificado correctamente", "Modificacion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Servicio modificado correctamente", "Registro correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Close();
                     }
                 }

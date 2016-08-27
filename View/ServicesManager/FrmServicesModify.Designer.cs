@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
             this.cboMale = new System.Windows.Forms.ComboBox();
             this.cboZeal = new System.Windows.Forms.ComboBox();
             this.cboFemale = new System.Windows.Forms.ComboBox();
@@ -53,16 +53,16 @@
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // btnAdd
+            // btnModify
             // 
-            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAdd.Location = new System.Drawing.Point(129, 205);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(80, 23);
-            this.btnAdd.TabIndex = 14;
-            this.btnAdd.Text = "Aceptar";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnModify.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnModify.Location = new System.Drawing.Point(129, 205);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(80, 23);
+            this.btnModify.TabIndex = 14;
+            this.btnModify.Text = "Aceptar";
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // cboMale
             // 
@@ -171,7 +171,7 @@
             this.Controls.Add(this.lblCurrentMale);
             this.Controls.Add(this.lblCurrentFemale);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnModify);
             this.Controls.Add(this.cboMale);
             this.Controls.Add(this.cboZeal);
             this.Controls.Add(this.cboFemale);
@@ -191,7 +191,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnModify;
         protected System.Windows.Forms.ComboBox cboMale;
         protected System.Windows.Forms.ComboBox cboZeal;
         protected System.Windows.Forms.ComboBox cboFemale;
