@@ -10,21 +10,22 @@ using System.Windows.Forms;
 
 namespace View.ServicesManager
 {
-    public partial class FrmServicesAdd : Form
+    public partial class FrmServicesModify : Form
     {
-        Logic.Dog logicFemaleDog = new Logic.Dog();
-        Logic.Dog logicMaleDog = new Logic.Dog();
-        Logic.Zeal logicZeal = new Logic.Zeal();
+        private Logic.Dog logicFemaleDog = new Logic.Dog();
+        private Logic.Dog logicMaleDog = new Logic.Dog();
+        private Logic.Zeal logicZeal = new Logic.Zeal();
+        private DataGridViewRow selectedRow;
 
         //Entity fields
-        private int idMale = 0;
-        private int idFemale = 0;
+        protected int idMale = 0;
+        protected int idFemale = 0;
         DateTime Zeal_startDate;
 
-        private void bindZealCombo()
+        public FrmServicesModify(DataGridViewRow selectedRow)
         {
-            cboZeal.DataSource = logicZeal.getZealFrom(Convert.ToInt32(cboFemale.SelectedValue));
-            cboZeal.DisplayMember = "startDate";
+            InitializeComponent();
+            this.selectedRow = selectedRow;
         }
         private void bindCombos()
         {
@@ -38,20 +39,23 @@ namespace View.ServicesManager
             cboMale.DisplayMember = "nameReal";
             cboMale.ValueMember = "idDogs";
             this.cboMale.SelectedIndexChanged += new System.EventHandler(this.cboMale_SelectedIndexChanged);
-
         }
-        public FrmServicesAdd()
+        private void bindZealCombo()
         {
-            InitializeComponent();
+            cboZeal.DataSource = logicZeal.getZealFrom(Convert.ToInt32(cboFemale.SelectedValue));
+            cboZeal.DisplayMember = "startDate";
         }
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void bindCurrents()
         {
-            Close();
+            lblCurrentFemale.Text = selectedRow.Cells["Hembra"].Value.ToString();
+            lblCurrentZeal.Text = selectedRow.Cells["Inicio de Celo"].Value.ToString();
+            lblCurrentMale.Text = selectedRow.Cells["Macho"].Value.ToString();
         }
-        private void FrmServicesAdd_Load(object sender, EventArgs e)
+        private void FrmServicesModify_Load(object sender, EventArgs e)
         {
             MaximizeBox = false;
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            bindCurrents();
             bindCombos();
             cboMale.SelectedValue = 0;
             cboFemale.SelectedValue = 0;
@@ -67,23 +71,25 @@ namespace View.ServicesManager
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(cboMale.SelectedItem == null || cboFemale.SelectedItem == null || cboZeal.SelectedItem == null)
+            if (cboMale.SelectedItem == null || cboFemale.SelectedItem == null || cboZeal.SelectedItem == null)
             {
                 MessageBox.Show("Uno de los campos requeridos es invalido", "Error de registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                //Asign selected Dates
                 Zeal_startDate = Convert.ToDateTime(cboZeal.Text);
                 Entity.Service entityService = new Entity.Service(idMale, idFemale, Zeal_startDate.Date);
                 try
                 {
                     Logic.Service logicService = new Logic.Service();
-                    logicService.insert(entityService);
-                    MessageBox.Show("Servicio agregado correctamente", "Registro correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    if (MessageBox.Show("Desea aceptar los cambios?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        logicService.update(entityService);
+                        MessageBox.Show("Servicio modificado correctamente", "Modificacion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Error en registro: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

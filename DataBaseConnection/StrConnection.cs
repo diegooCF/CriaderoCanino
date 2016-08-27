@@ -52,7 +52,7 @@ namespace DataBaseConnection
 
         public static string GetStringConnection()
         {
-            return @"Server=" + Host + ";Database=Criadero;Uid=" + UserID +";Pwd=" + Password + "";
+            return @"Server=" + Host + ";Database=criadero;Uid=" + UserID +";Pwd=" + Password + "";
         }
     }
 }

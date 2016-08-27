@@ -36,7 +36,7 @@ namespace Data
                 services.idService as 'ID',
                 T1.nameReal as 'Macho',
                 T2.nameReal as 'Hembra',
-                DATE(services.Zeal_startDate) as 'Inicio de Celo',
+                DATE_FORMAT(services.Zeal_startDate, '%d/%m/%Y') as 'Inicio de Celo',
                 DATE_ADD(services.Zeal_startDate, INTERVAL 2 MONTH) as 'Min Fecha Nac'
                 FROM Services 
                 INNER JOIN Dog_has_Zeal

@@ -27,15 +27,19 @@ namespace View.Management
         {
             bindServicesGrid();
         }
-
+        private void refreshDataGridView()
+        {
+            Logic.Service logicService = new Logic.Service();
+            dgvServices.DataSource = null;
+            dgvServices.DataSource = logicService.getAllServices();
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ServicesManager.FrmServicesAdd form = new ServicesManager.FrmServicesAdd();
             form.ShowDialog();
             if (form.DialogResult == DialogResult.OK)
             {
-                Logic.Service logicService = new Logic.Service();
-                dgvServices.DataSource = logicService.getAllServices();
+                refreshDataGridView();
             }           
         }
 
@@ -43,8 +47,9 @@ namespace View.Management
         {
             if (dgvServices.SelectedRows.Count > 0)
             {
-                //ServicesManager.FrmServicesModify form = new ServicesManager.FrmServicesModify(dgvServices.SelectedRows);
-               // form.ShowDialog();
+                ServicesManager.FrmServicesModify form = new ServicesManager.FrmServicesModify(dgvServices.CurrentRow);
+                form.ShowDialog();
+                refreshDataGridView();
             }
             else
             {
