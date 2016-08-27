@@ -96,5 +96,13 @@ namespace View
             form.StartPosition = FormStartPosition.CenterParent;
             form.Show();
         }
+
+        private void gestorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Management.FrmServices form = new Management.FrmServices();
+            form.MdiParent = this;
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.Show();
+        }
     }
 }

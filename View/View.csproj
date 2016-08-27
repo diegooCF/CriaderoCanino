@@ -102,6 +102,18 @@
     <Compile Include="ServicesManager\FrmServicesModify.Designer.cs">
       <DependentUpon>FrmServicesModify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ZealsManager\FrmZealsAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZealsManager\FrmZealsAdd.Designer.cs">
+      <DependentUpon>FrmZealsAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZealsManager\FrmZealsMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZealsManager\FrmZealsMain.Designer.cs">
+      <DependentUpon>FrmZealsMain.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Config\FrmCredentials.resx">
       <DependentUpon>FrmCredentials.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +149,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ServicesManager\FrmServicesModify.resx">
       <DependentUpon>FrmServicesModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZealsManager\FrmZealsAdd.resx">
+      <DependentUpon>FrmZealsAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZealsManager\FrmZealsMain.resx">
+      <DependentUpon>FrmZealsMain.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

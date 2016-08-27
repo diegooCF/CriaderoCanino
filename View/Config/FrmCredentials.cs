@@ -51,7 +51,6 @@ namespace View.Config
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //TODO Move this code to corresponding project
             if(chkGuest.Checked || (!string.IsNullOrWhiteSpace(txtUser.Text) && !string.IsNullOrWhiteSpace(txtPassword.Text)))
             {
                 try

@@ -12,20 +12,23 @@ namespace View.Management
 {
     public partial class FrmServices : Form
     {
+        //Form
         public FrmServices()
         {
             InitializeComponent();
         }
+        private void FrmServices_Load(object sender, EventArgs e)
+        {
+            MaximizeBox = false;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            bindServicesGrid();
+        }
 
+        //Methods
         private void bindServicesGrid()
         {
             Logic.Service logicService = new Logic.Service();
             dgvServices.DataSource = logicService.getAllServices();
-        }
-
-        private void FrmServices_Load(object sender, EventArgs e)
-        {
-            bindServicesGrid();
         }
         private void refreshDataGridView()
         {
@@ -33,6 +36,9 @@ namespace View.Management
             dgvServices.DataSource = null;
             dgvServices.DataSource = logicService.getAllServices();
         }
+
+        
+        //Buttons
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ServicesManager.FrmServicesAdd form = new ServicesManager.FrmServicesAdd();
@@ -42,7 +48,6 @@ namespace View.Management
                 refreshDataGridView();
             }           
         }
-
         private void btnModify_Click(object sender, EventArgs e)
         {
             if (dgvServices.SelectedRows.Count > 0)
@@ -56,12 +61,10 @@ namespace View.Management
                 MessageBox.Show("No ha seleccionado ninguna celda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvServices.SelectedRows.Count > 0)

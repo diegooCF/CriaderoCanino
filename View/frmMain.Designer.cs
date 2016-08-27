@@ -41,6 +41,8 @@
             this.especiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coloresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.credencialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.serviciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +51,8 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.consultaToolStripMenuItem,
-            this.credencialesToolStripMenuItem});
+            this.credencialesToolStripMenuItem,
+            this.serviciosToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
@@ -74,7 +77,7 @@
             this.perroToolStripMenuItem,
             this.colorToolStripMenuItem});
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             // 
             // especieToolStripMenuItem
@@ -100,7 +103,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // consultaToolStripMenuItem
@@ -115,14 +118,14 @@
             // especiesToolStripMenuItem
             // 
             this.especiesToolStripMenuItem.Name = "especiesToolStripMenuItem";
-            this.especiesToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.especiesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.especiesToolStripMenuItem.Text = "Especies";
             this.especiesToolStripMenuItem.Click += new System.EventHandler(this.especiesToolStripMenuItem_Click);
             // 
             // coloresToolStripMenuItem
             // 
             this.coloresToolStripMenuItem.Name = "coloresToolStripMenuItem";
-            this.coloresToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.coloresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.coloresToolStripMenuItem.Text = "Colores";
             this.coloresToolStripMenuItem.Click += new System.EventHandler(this.coloresToolStripMenuItem_Click);
             // 
@@ -132,6 +135,21 @@
             this.credencialesToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.credencialesToolStripMenuItem.Text = "Credenciales";
             this.credencialesToolStripMenuItem.Click += new System.EventHandler(this.credencialesToolStripMenuItem_Click);
+            // 
+            // serviciosToolStripMenuItem
+            // 
+            this.serviciosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestorToolStripMenuItem});
+            this.serviciosToolStripMenuItem.Name = "serviciosToolStripMenuItem";
+            this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.serviciosToolStripMenuItem.Text = "Servicios";
+            // 
+            // gestorToolStripMenuItem
+            // 
+            this.gestorToolStripMenuItem.Name = "gestorToolStripMenuItem";
+            this.gestorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gestorToolStripMenuItem.Text = "Gestor";
+            this.gestorToolStripMenuItem.Click += new System.EventHandler(this.gestorToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -164,6 +182,8 @@
         private System.Windows.Forms.ToolStripMenuItem especiesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem coloresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem credencialesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem serviciosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestorToolStripMenuItem;
     }
 }
 

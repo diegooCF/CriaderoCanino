@@ -88,11 +88,12 @@
             // 
             this.cboMale.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMale.FormattingEnabled = true;
+            this.cboMale.Items.AddRange(new object[] {
+            "Seleccione macho"});
             this.cboMale.Location = new System.Drawing.Point(15, 164);
             this.cboMale.Name = "cboMale";
             this.cboMale.Size = new System.Drawing.Size(194, 21);
             this.cboMale.TabIndex = 2;
-            this.cboMale.Items.Insert(0, "Seleccione macho");
             // 
             // cboZeal
             // 

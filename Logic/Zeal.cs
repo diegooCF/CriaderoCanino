@@ -9,11 +9,33 @@ namespace Logic
 {
     public class Zeal
     {
+        public void insert(Entity.Zeal pZeal)
+        {
+            try
+            {
+                Data.Zeal.insert(pZeal);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public DataTable getZealFrom(int idFemaleDog)
         {
             try
             {
                 return Data.Zeal.getZealFrom(idFemaleDog);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable getAllActiveZeals()
+        {
+            try
+            {
+                return Data.Zeal.getAllActiveZeals();
             }
             catch (Exception ex)
             {

@@ -12,6 +12,7 @@ namespace View.ServicesManager
 {
     public partial class FrmServicesAdd : Form
     {
+        //Logic resources
         Logic.Dog logicFemaleDog = new Logic.Dog();
         Logic.Dog logicMaleDog = new Logic.Dog();
         Logic.Zeal logicZeal = new Logic.Zeal();
@@ -21,6 +22,21 @@ namespace View.ServicesManager
         private int idFemale = 0;
         DateTime Zeal_startDate;
 
+        //Form
+        public FrmServicesAdd()
+        {
+            InitializeComponent();
+        }
+        private void FrmServicesAdd_Load(object sender, EventArgs e)
+        {
+            MaximizeBox = false;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            bindCombos();
+            cboMale.SelectedValue = 0;
+            cboFemale.SelectedValue = 0;
+        }
+     
+        //Methods
         private void bindZealCombo()
         {
             cboZeal.DataSource = logicZeal.getZealFrom(Convert.ToInt32(cboFemale.SelectedValue));
@@ -40,34 +56,11 @@ namespace View.ServicesManager
             this.cboMale.SelectedIndexChanged += new System.EventHandler(this.cboMale_SelectedIndexChanged);
 
         }
-        public FrmServicesAdd()
-        {
-            InitializeComponent();
-        }
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-        private void FrmServicesAdd_Load(object sender, EventArgs e)
-        {
-            MaximizeBox = false;
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            bindCombos();
-            cboMale.SelectedValue = 0;
-            cboFemale.SelectedValue = 0;
-        }
-        private void cboFemale_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            idFemale = Convert.ToInt32(cboFemale.SelectedValue);
-            bindZealCombo();
-        }
-        private void cboMale_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            idMale = Convert.ToInt32(cboMale.SelectedValue);
-        }
+
+        //Buttons
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(cboMale.SelectedItem == null || cboFemale.SelectedItem == null || cboZeal.SelectedItem == null)
+            if (cboMale.SelectedItem == null || cboFemale.SelectedItem == null || cboZeal.SelectedItem == null)
             {
                 MessageBox.Show("Uno de los campos requeridos es invalido", "Error de registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -83,11 +76,26 @@ namespace View.ServicesManager
                     MessageBox.Show("Servicio agregado correctamente", "Registro correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Error en registro: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        
+        //Events
+        private void cboFemale_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idFemale = Convert.ToInt32(cboFemale.SelectedValue);
+            bindZealCombo();
+        }
+        private void cboMale_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idMale = Convert.ToInt32(cboMale.SelectedValue);
         }
     }
 }
