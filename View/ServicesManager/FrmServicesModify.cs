@@ -12,6 +12,7 @@ namespace View.ServicesManager
 {
     public partial class FrmServicesModify : Form
     {
+        //Logical resources
         private Logic.Dog logicFemaleDog = new Logic.Dog();
         private Logic.Dog logicMaleDog = new Logic.Dog();
         private Logic.Zeal logicZeal = new Logic.Zeal();
@@ -22,11 +23,23 @@ namespace View.ServicesManager
         protected int idFemale = 0;
         DateTime Zeal_startDate;
 
+        //Form
         public FrmServicesModify(DataGridViewRow selectedRow)
         {
             InitializeComponent();
             this.selectedRow = selectedRow;
         }
+        private void FrmServicesModify_Load(object sender, EventArgs e)
+        {
+            MaximizeBox = false;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            bindCurrents();
+            bindCombos();
+            cboMale.SelectedValue = 0;
+            cboFemale.SelectedValue = 0;
+        }
+
+        //Methods
         private void bindCombos()
         {
             //Bind female combo
@@ -51,15 +64,8 @@ namespace View.ServicesManager
             lblCurrentZeal.Text = selectedRow.Cells["Inicio de Celo"].Value.ToString();
             lblCurrentMale.Text = selectedRow.Cells["Macho"].Value.ToString();
         }
-        private void FrmServicesModify_Load(object sender, EventArgs e)
-        {
-            MaximizeBox = false;
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            bindCurrents();
-            bindCombos();
-            cboMale.SelectedValue = 0;
-            cboFemale.SelectedValue = 0;
-        }
+
+        //Buttons & Events
         private void cboFemale_SelectedIndexChanged(object sender, EventArgs e)
         {
             idFemale = Convert.ToInt32(cboFemale.SelectedValue);
@@ -82,7 +88,7 @@ namespace View.ServicesManager
                 try
                 {
                     Logic.Service logicService = new Logic.Service();
-                    if (MessageBox.Show("Desea aceptar las modificaciones?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Desea aceptar las modificaciones?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         logicService.update(entityService);
                         MessageBox.Show("Servicio modificado correctamente", "Registro correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);

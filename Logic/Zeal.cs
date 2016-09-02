@@ -20,6 +20,17 @@ namespace Logic
                 throw ex;
             }
         }
+        public void update(Entity.Zeal pDogHasZeal)
+        {
+            try
+            {
+                Data.Zeal.update(pDogHasZeal);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public DataTable getZealFrom(int idFemaleDog)
         {
             try

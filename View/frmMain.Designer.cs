@@ -43,6 +43,8 @@
             this.credencialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.celosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +54,8 @@
             this.archivoToolStripMenuItem,
             this.consultaToolStripMenuItem,
             this.credencialesToolStripMenuItem,
-            this.serviciosToolStripMenuItem});
+            this.serviciosToolStripMenuItem,
+            this.celosToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
@@ -77,7 +80,7 @@
             this.perroToolStripMenuItem,
             this.colorToolStripMenuItem});
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             // 
             // especieToolStripMenuItem
@@ -103,7 +106,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // consultaToolStripMenuItem
@@ -118,14 +121,14 @@
             // especiesToolStripMenuItem
             // 
             this.especiesToolStripMenuItem.Name = "especiesToolStripMenuItem";
-            this.especiesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.especiesToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.especiesToolStripMenuItem.Text = "Especies";
             this.especiesToolStripMenuItem.Click += new System.EventHandler(this.especiesToolStripMenuItem_Click);
             // 
             // coloresToolStripMenuItem
             // 
             this.coloresToolStripMenuItem.Name = "coloresToolStripMenuItem";
-            this.coloresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.coloresToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.coloresToolStripMenuItem.Text = "Colores";
             this.coloresToolStripMenuItem.Click += new System.EventHandler(this.coloresToolStripMenuItem_Click);
             // 
@@ -147,9 +150,24 @@
             // gestorToolStripMenuItem
             // 
             this.gestorToolStripMenuItem.Name = "gestorToolStripMenuItem";
-            this.gestorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gestorToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.gestorToolStripMenuItem.Text = "Gestor";
             this.gestorToolStripMenuItem.Click += new System.EventHandler(this.gestorToolStripMenuItem_Click);
+            // 
+            // celosToolStripMenuItem
+            // 
+            this.celosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestorToolStripMenuItem1});
+            this.celosToolStripMenuItem.Name = "celosToolStripMenuItem";
+            this.celosToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.celosToolStripMenuItem.Text = "Celos";
+            // 
+            // gestorToolStripMenuItem1
+            // 
+            this.gestorToolStripMenuItem1.Name = "gestorToolStripMenuItem1";
+            this.gestorToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.gestorToolStripMenuItem1.Text = "Gestor";
+            this.gestorToolStripMenuItem1.Click += new System.EventHandler(this.gestorToolStripMenuItem1_Click);
             // 
             // FrmMain
             // 
@@ -184,6 +202,8 @@
         private System.Windows.Forms.ToolStripMenuItem credencialesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem serviciosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem celosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestorToolStripMenuItem1;
     }
 }
 

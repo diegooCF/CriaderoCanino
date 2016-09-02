@@ -17,7 +17,7 @@ namespace View
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //TODO Dejar esto como estaba
-            Application.Run(new ZealsManager.FrmZealsMain());
+            Application.Run(new FrmMain());
         }
     }
 }

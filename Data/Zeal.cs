@@ -27,6 +27,23 @@ namespace Data
                 throw ex;
             }
         }
+        public static void update(Entity.Zeal pDogHasZeal)
+        {
+            string query = @"sprocUpdateZeal";
+            MySqlCommand mySqlCommand = new MySqlCommand(query, MainConnection.GetConnection());
+            mySqlCommand.CommandType = CommandType.StoredProcedure;
+            mySqlCommand.Parameters.AddWithValue("@Dogs_idDogs", pDogHasZeal.Dogs_idDogs);
+            mySqlCommand.Parameters.AddWithValue("@startDate", pDogHasZeal.startDate);
+
+            try
+            {
+                MainConnection.ConnectAndExecute(mySqlCommand);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public static DataTable getZealFrom(int idFemaleDog)
         {
             string query = @"SELECT * FROM Dog_has_Zeal WHERE (Dogs_idDogs = ?idFemaleDog)";

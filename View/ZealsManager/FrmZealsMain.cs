@@ -51,5 +51,14 @@ namespace View.ZealsManager
                 refreshDataGridView();
             }
         }
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            FrmZealsModify form = new FrmZealsModify(dgvZeals.CurrentRow);
+            form.ShowDialog();
+            if (form.DialogResult == DialogResult.OK)
+            {
+                refreshDataGridView();
+            }
+        }
     }
 }

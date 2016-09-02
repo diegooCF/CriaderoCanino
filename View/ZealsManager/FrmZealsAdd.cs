@@ -39,7 +39,7 @@ namespace View.ZealsManager
         {
             if(cboFemale.SelectedItem == null || dtpStartZeal.Value.Date > DateTime.Today.Date)
             {
-                MessageBox.Show("Uno de los valores ingresados no es correcto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Uno de los valores ingresados no es correcto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);               
             }
             else
             {
